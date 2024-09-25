@@ -13,14 +13,32 @@ public class ProductService {
     public List<Product> getAllProducts() {
         return productlist;
     }
+
     public Product addProduct(Product product) {
         productlist.add(product);
         return product;
     }
 
     public Product updateProduct(Long id, Product updatedProduct) {
+        for (Product product : productlist) {
+            if (product.getId().equals(id)) {
+                product.setName(updatedProduct.getName());
+                product.setPrice(updatedProduct.getPrice());
+                return product;
+            }
+        }
+        return updatedProduct;
     }
 
-    public void deleteProduct(Long id) {
+    public Product deleteProduct(Long id) {
+        for (Product product : productlist) {
+            if (product.getId().equals(id)) {
+                productlist.remove(product);
+                return product;
+            }
+
+        }
+        return null;
+
     }
 }
