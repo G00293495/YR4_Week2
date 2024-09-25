@@ -22,5 +22,6 @@ public class ProductService {
     }
 
     public void deleteProduct(Long id) {
+        productlist.deleteById(id);
     }
 }
