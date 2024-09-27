@@ -17,4 +17,11 @@ public class ProductService {
         productlist.add(product);
         return product;
     }
+
+    public Product updateProduct(Long id, Product updatedProduct) {
+    }
+
+    public void deleteProduct(Long id) {
+        productlist.deleteById(id);
+    }
 }
