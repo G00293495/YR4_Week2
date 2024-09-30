@@ -30,6 +30,7 @@ public class ProductService {
         return updatedProduct;
     }
 
+
     public Product deleteProduct(Long id) {
         for (Product product : productlist) {
             if (product.getId().equals(id)) {
